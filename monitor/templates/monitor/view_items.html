@@ -11,12 +11,21 @@ View Items
         <div class="cell medium-8 small-12">
             <div class="grid-x align-justify">
                 <div class="cell shrink">
-                    <h1 class="margin-top-2">Your Monitored Items</h1> <!-- Added margin-top-2 for 2rem of spacing -->
+                    <h1 class="margin-top-2">Your Monitored Items</h1>
                 </div>
                 <div class="cell shrink">
                     <a href="{% url 'add_item' %}" class="button">Add Item</a>
                 </div>
             </div>
+
+            <!-- Displaying the messages -->
+            {% if messages %}
+            <ul class="callout alert">
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
 
             <ul class="no-bullet">
                 {% for item in items %}

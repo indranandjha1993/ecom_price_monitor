@@ -69,7 +69,6 @@ def fetch_current_price(url, selector):
 
 @login_required
 def check_item_price(request, item_id):
-    print(type(request.user))
     item = get_object_or_404(Item, id=item_id, user=request.user)
     current_price = fetch_current_price(item.url, item.selector_element)
 
