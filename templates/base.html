@@ -1,0 +1,33 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Default Title{% endblock %}</title>
+    <!-- Add your CSS links here -->
+</head>
+<body>
+
+<header>
+    <!-- Common header elements go here -->
+</header>
+
+<nav>
+    <!-- Navigation elements go here -->
+</nav>
+
+<main>
+    {% block content %}
+    <!-- Default content can go here, but this will typically be overridden by child templates -->
+    {% endblock %}
+</main>
+
+<footer>
+    <!-- Footer elements go here -->
+</footer>
+
+<!-- Add your JS scripts here -->
+
+</body>
+</html>
