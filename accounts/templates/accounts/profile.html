@@ -5,9 +5,16 @@ Profile
 {% endblock %}
 
 {% block content %}
-<h1>Profile for {{ request.user.email }}</h1>
-<p>Bio: {{ request.user.bio }}</p>
-{% if request.user.profile_pic %}
-<img src="{{ request.user.profile_pic.url }}" alt="Profile Picture" width="200">
-{% endif %}
+<div class="grid-container"> <!-- Foundation's container class for a centered, padded grid -->
+    <div class="grid-x grid-margin-x"> <!-- Foundation's grid row and cell classes -->
+        <div class="cell large-6 medium-8 small-12">
+            <!-- Foundation's cell class to represent an individual grid cell with responsive classes -->
+            <h1>Profile for {{ request.user.email }}</h1>
+            <p>Bio: {{ request.user.bio }}</p>
+            {% if request.user.profile_pic %}
+            <img src="{{ request.user.profile_pic.url }}" alt="Profile Picture" width="200">
+            {% endif %}
+        </div>
+    </div>
+</div>
 {% endblock %}

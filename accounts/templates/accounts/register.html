@@ -5,9 +5,23 @@ Register
 {% endblock %}
 
 {% block content %}
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Register</button>
-</form>
+<div class="grid-container"> <!-- Foundation's container class for a centered, padded grid -->
+    <div class="grid-x grid-margin-x align-center">
+        <!-- Foundation's grid row, cell classes, and center alignment class -->
+        <div class="cell medium-6 small-12">
+            <!-- Foundation's cell class to represent an individual grid cell with responsive classes -->
+            <form method="post">
+                {% csrf_token %}
+                <fieldset class="fieldset">
+                    <legend>Register</legend>
+                    {{ form.as_p }}
+                    <div class="button-group">
+                        <button type="submit" class="button">Register</button>
+                        <a href="{% url 'login' %}" class="button secondary">Already have an account? Login</a>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}

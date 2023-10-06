@@ -5,10 +5,21 @@ Edit Item
 {% endblock %}
 
 {% block content %}
-<h1>Edit Item</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Update Item</button>
-</form>
+<div class="grid-container"> <!-- Foundation's container class for a centered, padded grid -->
+    <div class="grid-x grid-margin-x align-center">
+        <!-- Foundation's grid row, cell classes, and center alignment class -->
+        <div class="cell medium-6 small-12">
+            <!-- Foundation's cell class to represent an individual grid cell with responsive classes -->
+            <h1>Edit Item</h1>
+            <form method="post" class="callout secondary">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="button-group float-right">
+                    <button type="submit" class="button">Update Item</button>
+                    <a href="{% url 'view_items' %}" class="button secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}

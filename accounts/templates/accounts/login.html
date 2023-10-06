@@ -5,12 +5,25 @@ Login
 {% endblock %}
 
 {% block content %}
-<form method="post">
-    {% csrf_token %}
-    <label for="email">Email:</label>
-    <input type="email" name="email" id="email" required><br>
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password" required><br>
-    <button type="submit">Login</button>
-</form>
+<div class="grid-container"> <!-- Foundation's container class for a centered, padded grid -->
+    <div class="grid-x grid-margin-x align-center">
+        <!-- Foundation's grid row, cell classes, and center alignment class -->
+        <div class="cell medium-6 small-12">
+            <!-- Foundation's cell class to represent an individual grid cell with responsive classes -->
+            <form method="post">
+                {% csrf_token %}
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required class="input-group-field"><br>
+
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" required class="input-group-field"><br>
+
+                <div class="button-group">
+                    <button type="submit" class="button">Login</button>
+                    <a href="{% url 'register' %}" class="button secondary">Register</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}

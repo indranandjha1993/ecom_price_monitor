@@ -5,15 +5,37 @@ View Items
 {% endblock %}
 
 {% block content %}
-<h1>Your Monitored Items</h1>
-<ul>
-    {% for item in items %}
-    <li>
-        {{ item.product_name }} - Desired: ${{ item.desired_price }} | Current: {{ item.current_price }}
-        <a href="{% url 'check_price' item.id %}">Fetch Current Price</a>
-        <a href="{% url 'update_item' item.id %}">Edit</a>
-        <a href="{% url 'delete_item' item.id %}">Delete</a>
-    </li>
-    {% endfor %}
-</ul>
+<div class="grid-container">
+    <div class="grid-x grid-margin-x align-center">
+
+        <div class="cell medium-8 small-12">
+            <div class="grid-x align-justify">
+                <div class="cell shrink">
+                    <h1 class="margin-top-2">Your Monitored Items</h1> <!-- Added margin-top-2 for 2rem of spacing -->
+                </div>
+                <div class="cell shrink">
+                    <a href="{% url 'add_item' %}" class="button">Add Item</a>
+                </div>
+            </div>
+
+            <ul class="no-bullet">
+                {% for item in items %}
+                <li class="callout secondary">
+                    <h5>{{ item.product_name }}</h5>
+                    Desired: ${{ item.desired_price }} | Current: {{ item.current_price }}
+                    <div class="button-group">
+                        <a href="{% url 'check_price' item.id %}" class="button tiny">Fetch Current Price</a>
+                        <a href="{% url 'update_item' item.id %}" class="button tiny secondary">Edit</a>
+                        <a href="{% url 'delete_item' item.id %}" class="button tiny alert">Delete</a>
+                    </div>
+                </li>
+                {% empty %}
+                <li class="callout secondary">
+                    You don't have any items being monitored yet.
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
 {% endblock %}

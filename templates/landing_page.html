@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}
+Landing Page
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="hero-section grid-container full">
+    <div class="grid-x align-middle align-center" style="height: 100vh; background-color: #f5f5f5;">
+        <div class="cell medium-6 text-center">
+            <h1>Welcome to PriceMonitor</h1>
+            <p>The best tool to track prices of your favorite items on Amazon.</p>
+            <a href="{% url 'register' %}" class="button large">Get Started</a>
+        </div>
+    </div>
+</div>
+
+<!-- Features Section -->
+<div class="grid-container">
+    <div class="grid-x grid-margin-x">
+        <div class="cell medium-4">
+            <h2>User Authentication</h2>
+            <p>Securely register and login to start monitoring prices.</p>
+        </div>
+        <div class="cell medium-4">
+            <h2>Real-time Price Checks</h2>
+            <p>Get the latest prices with a simple click. We ensure accuracy.</p>
+        </div>
+        <div class="cell medium-4">
+            <h2>Notifications</h2>
+            <p>Be the first to know when a product's price drops to your desired rate.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer-section grid-container">
+    <div class="grid-x align-middle">
+        <div class="cell medium-6">
+            <p>&copy; 2023 PriceMonitor. All Rights Reserved.</p>
+        </div>
+        <div class="cell medium-6 text-right">
+            <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a>
+        </div>
+    </div>
+</footer>
+
+{% endblock %}

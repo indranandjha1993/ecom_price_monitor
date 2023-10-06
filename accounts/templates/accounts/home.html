@@ -5,6 +5,12 @@ Home
 {% endblock %}
 
 {% block content %}
-<h1>Welcome to the Home Page</h1>
-<p>This is the main content of the home page.</p>
+<div class="grid-container"> <!-- Foundation's container class for a centered, padded grid -->
+    <div class="grid-x grid-margin-x"> <!-- Foundation's grid row and cell classes -->
+        <div class="cell"> <!-- Foundation's cell class to represent an individual grid cell -->
+            <h1>Welcome to the Home Page</h1>
+            <p>This is the main content of the home page.</p>
+        </div>
+    </div>
+</div>
 {% endblock %}
